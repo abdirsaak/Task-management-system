@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body >
+    <div class="flex flex-row ">
+    <!-- left side  -->
+    
+     <section class=" " >
+        <!-- sidebar section -->
+        <div class="sidebar bg-cyan-500 w-64 h-full max-sm:w-14 ">
+            <!-- desktop screen  -->
+            <div class="btns mx-6 pt-10 pb-5 flex flex-col justify-between h-full max-sm:hidden ">
+                <ul class="mt-6 space-y-4 ">
+
+                    <!-- dashboard  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('employee_dashbaord') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-6" src="./images/dashboard-interface.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Dashboard</label>
+                        </a>
+                    </li>
+
+                 
+                    <!-- todo  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('employee_todo') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/todo.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Todo</label></a>
+                    </li>
+
+                    <!-- feature  -->
+                    <li class="">
+                        <a href="{{ url_for('employee_feature') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/feature.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Features</label></a>
+                    </li>
+
+                    <!-- Issues  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('employee_issue') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/add-task.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Issues</label></a>
+                    </li>
+
+                  
+                    
+                </ul>
+
+                <li class="">
+                        
+                    <a href="{{ url_for('employee_profile') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                       
+                        <button class="mt-5 px-16 w-[100%] py-3 bg-white rounded hover:bg-gray-200  font-semibold text-md">Profile</button>
+                </li>
+            </div>
+
+            <!-- mobile screen  -->
+            <div class="btns relative mx-2 pt-10 pb-5 flex flex-col justify-between items-end h-full hidden max-sm:block">
+                <ul class="mt-6 space-y-4 ">
+                    <li class="">
+                        <!-- dashboard -->
+                        <a href="{{ url_for('employee_dashbaord') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-6" src="./images/dashboard-interface.png" alt="">
+                            
+                        </a>
+                    </li>
+
+                    
+
+                    <!-- todo  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('employee_todo') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/todo.png" alt="">
+                        </a>
+                    </li>
+
+                    <!-- feature  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('employee_feature') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/feature.png" alt="">
+                        </a>
+                    </li>
+                    <!-- issues  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('employee_issue') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/add-task.png" alt="">
+                        </a>
+                    </li>
+
+                 
+                    
+                </ul>
+                <div class="absolute bottom-5  block hover:bg-cyan-600 p-2 rounded flex items-center gap-3">
+                    <li class="">
+                        
+                        <a href="{{ url_for('employee_profile') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <button class=" "><img class="size-7" src="./images/user.png" alt=""></button>
+                        
+                        </a>
+                    </li>
+
+                </div>
+                
+            </div>
+        </div>
+        
+    </section>
+                   
+   
+
+     <section class="w-full mx-5 max-sm:max-w-[90%]  my-5">
+        <h3 class="text-2xl font-semibold mb-5">Dashboard</h3>
+        <!-- dashboard boxes -->
+        <div class="grid gap-[10px] mx-auto max-sm:grid-cols-[repeat(auto-fill,_minmax(170px,_1fr))]  grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))]" >
+          
+           
+            <!-- todo  -->
+            <div class="flex flex-col items-center gap-5 bg-blue-400 p-2 rounded-sm text-xl font-semibold text-white">
+                <h2>Todo</h2>
+                <img class="size-14" src="/images/todo.png" alt="">
+                <p>{{ total_todo[0] }}</p>
+            </div>
+            <!-- Issues  -->
+          
+           
+        </div>
+     
+    </section>
+</div>
+</body>
+</html>

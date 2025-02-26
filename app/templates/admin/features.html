@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tasks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body >
+    <div class="flex flex-row gap-5 max-sm:gap-1">
+    <!-- left side  -->
+    <section class=" " >
+        <!-- sidebar section -->
+        <div class="sidebar bg-cyan-500 w-64 h-full max-sm:w-14 ">
+            <!-- desktop screen  -->
+            <div class="btns mx-6 pt-10 pb-5 flex flex-col justify-between h-full max-sm:hidden ">
+                <ul class="mt-6 space-y-4 ">
+
+                    <!-- dashboard  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('dashbaord') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-6" src="./images/dashboard-interface.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Dashboard</label>
+                        </a>
+                    </li>
+
+                    <!-- tasks  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('task') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-7" src="./images/task.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Task</label></a>
+                    </li>
+
+                    <!-- todo  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('todo') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/todo.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Todo</label></a>
+                    </li>
+
+                    <!-- feature  -->
+                    <li class="">
+                        <a href="{{ url_for('feature') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/feature.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Features</label></a>
+                    </li>
+
+                    <!-- Issues  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('issue') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/add-task.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Issues</label></a>
+                    </li>
+
+                    <!-- employee  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('employee') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/employee.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Employee</label></a>
+                    </li>
+                     <!-- ..admins -->
+                     <li class="">
+                        
+                        <a href="{{ url_for('register_admin') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/employee.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Admins</label></a>
+                    </li>
+                    
+                </ul>
+
+                <li class="">
+                        
+                    <a href="{{ url_for('profile') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                       
+                        <button class="mt-5 px-16 w-[100%] py-3 bg-white rounded hover:bg-gray-200  font-semibold text-md">Profile</button>
+                </li>
+            </div>
+
+            <!-- mobile screen  -->
+            <div class="btns relative mx-2 pt-10 pb-5 flex flex-col justify-between items-end h-full hidden max-sm:block">
+                <ul class="mt-6 space-y-4 ">
+                    <li class="">
+                        <!-- dashboard -->
+                        <a href="{{ url_for('dashbaord') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-6" src="./images/dashboard-interface.png" alt="">
+                            
+                        </a>
+                    </li>
+
+                    <!-- tasks  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('task') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-7" src="./images/task.png" alt="">
+                        </a>
+                    </li>
+
+                    <!-- todo  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('todo') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/todo.png" alt="">
+                        </a>
+                    </li>
+
+                    <!-- feature  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('feature') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/feature.png" alt="">
+                        </a>
+                    </li>
+                    <!-- issues  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('feature') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/add-task.png" alt="">
+                        </a>
+                    </li>
+
+                    <!-- employee  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('employee') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/employee.png" alt="">
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+                <div class="absolute bottom-5  block hover:bg-cyan-600 p-2 rounded flex items-center gap-3">
+                    <li class="">
+                        
+                        <a href="{{ url_for('profile') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <button class=" "><img class="size-7" src="./images/user.png" alt=""></button>
+                            
+                        </a>
+                    </li>
+                </div>
+                
+            </div>
+        </div>
+        
+    </section>
+                 
+
+    <!-- right side  -->
+
+    <section class="my-5 w-full">
+        <h2 class="font-bold text-3xl ">Feature</h2>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="flex flex-col items-center mt-4"> <!-- Container for centered messages -->
+            {% for category, message in messages %}
+              <div id="task_creation_settimeout" class="bg-cyan-500 text-white text-center px-10 width-[500px] h-[60px] flex items-center justify-center rounded-md mb-2 {{ category }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+        <div class="flex mx-10 my-5 ">
+            <button onclick="FeaturePopUp()" class="px-16 justify-end   py-3 bg-cyan-500 rounded hover:bg-cyan-400 text-white font-semibold text-xl ml-auto">Create Feature</button>
+        </div>
+        <table class="border-collapse  w-[95%] mx-auto leading-8 text-center  max-sm:text-[10px] max-sm:table-auto max-sm:w-[100%] ">
+            <tr class="border-b-2 border-gray-300 leading-4">
+                <th class=""> Id</th>
+                <th class="">Name</th>
+                <th class="">Description</th>
+                <th class="">Action</th>
+
+            </tr>
+           
+
+            {% for feature in get_features %}
+           
+            <tr>
+                      <td>{{ feature[0] }}</td>
+                      <td>{{ feature[1] }}</td>
+                      <td>{{ feature[2] }}</td>
+
+                      <td class="flex">
+                        <button  
+                        onclick="update_feature_popUp(this)"
+                        data-feature_id = "{{ feature[0] }}",
+                        data-feaure_name = "{{ feature[1] }}"
+                        data-feature_descript = "{{ feature[2] }}"
+                        
+                        class=" mx-2 bg-green-500 text-white w-[60px] h-[35px]  rounded-md text-[12px]"
+                        >Update
+                        </button>
+
+                       <form accept="{{ url_for('feature')}}" method="post">
+                        <input  hidden="text" name="feature_id" id="" value="{{ feature[0] }}">
+                        <button name="delete_feature" type="submit" class="mx-2 bg-red-500 text-white w-[60px] h-[35px]  rounded-md text-[12px]">Delete</button>
+                       </form>
+                     
+                    </td>
+            </tr>
+
+            {% endfor %}
+
+           
+            
+        </table>
+    </section>
+
+    <!-- Pop-up form container for creating features -->
+    <div id="popup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="relative p-6 bg-white rounded-md shadow-lg max-w-lg w-full">
+            <!-- Close icon -->
+            <button onclick="FeaturePopUp()" class="absolute top-2 right-2 bg-gray-400 p-2 rounded-full hover:bg-gray-800">
+                <img class="size-3" src="./images/close.png" alt="">
+            </button>
+            
+            <!-- Form  -->
+            <form action="{{ url_for('feature') }}" method="post" class="space-y-4 mt-5">
+                <div class="grid grid-cols-2 gap-4">
+                    
+                    <div>
+                        <input 
+                        name="feature_name"
+                            type="text" 
+                            placeholder="Feature Name" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                
+                    <!-- Status Dropdown -->
+                    
+                </div>
+                
+                <!-- Priority Dropdown -->
+             
+                <div>
+                    <textarea 
+                    name="feature_desc"
+                        placeholder="feature Description ..." 
+                        class="w-full h-24 px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                    ></textarea>
+                </div>
+                
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button 
+                    name="create_feature"
+                        type="submit" 
+                        class="w-full px-6 py-3 bg-cyan-500 text-white rounded-md hover:bg-cyan-600 font-semibold"
+                    >
+                        Create Feature
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Pop-up form container for updating feature -->
+    <div id="updatePopUp" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="relative p-6 bg-white rounded-md shadow-lg max-w-lg w-full">
+            <!-- Close icon -->
+            <button onclick="update_feature_popUp()" class="absolute top-2 right-2 bg-gray-400 p-2 rounded-full hover:bg-gray-800">
+                <img class="size-3" src="./images/close.png" alt="">
+            </button>
+            
+            <!-- Form  -->
+            <form action="{{ url_for('feature') }}" method="post" class="space-y-4 mt-5">
+                <div class="grid grid-cols-2 gap-4">
+                    
+                   
+                    <div>
+                        <input 
+                        id="feature_name"
+                        name="feature_name"
+                            type="text" 
+                            placeholder="Feature Name" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                    <div>
+                        <input 
+                        id="feature_id"
+                        name="feature_id"
+                        hidden
+                            type="text" 
+                            placeholder="Feature Name" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                
+                    <!-- Status Dropdown -->
+                    
+                </div>
+                
+                <!-- Priority Dropdown -->
+             
+                <div>
+                    <textarea 
+                    id="feature_desc"
+                    name="feature_desc"
+                        placeholder="feature Description ..." 
+                        class="w-full h-24 px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                    ></textarea>
+                </div>
+                
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button 
+                    name="update_feature"
+                        type="submit" 
+                        class="w-full px-6 py-3 bg-cyan-500 text-white rounded-md hover:bg-cyan-600 font-semibold"
+                    >
+                        Update Feature
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript to toggle the pop-up -->
+    <script>
+        function FeaturePopUp() {
+            const popup = document.getElementById('popup');
+            popup.classList.toggle('hidden');
+        }
+
+
+        function update_feature_popUp() {
+            const updatePopUp = document.getElementById('updatePopUp');
+            updatePopUp.classList.toggle('hidden');
+
+            if (event) {
+
+
+        const button = event.currentTarget;
+
+        const feature_id = button.getAttribute('data-feature_id');
+        const feature_name = button.getAttribute('data-feaure_name');
+        const feature_desc = button.getAttribute('data-feature_descript');
+       
+
+        // Set the values in the popup input fields
+        document.getElementById('feature_id').value = feature_id;
+        document.getElementById('feature_name').value = feature_name;
+        document.getElementById('feature_desc').value = feature_desc;
+       
+    }
+        }
+
+        
+        let task_create = document.querySelector('#task_creation_settimeout')
+        setTimeout(() => {
+            task_create.style.display = 'none'
+        }, 2000);
+    </script>
+    </div>
+</body>
+</html>

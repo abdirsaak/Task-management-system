@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        body.modal-active {
+            overflow-x: hidden;
+            overflow-y: visible !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flex flex-row ">
+        <section class=" " >
+            <!-- sidebar section -->
+            <div class="sidebar bg-cyan-500 w-64 h-full max-sm:w-14 ">
+                <!-- desktop screen  -->
+                <div class="btns mx-6 pt-10 pb-5 flex flex-col justify-between h-full max-sm:hidden ">
+                    <ul class="mt-6 space-y-4 ">
+    
+                        <!-- dashboard  -->
+                        <li class="">
+                            
+                            <a href="{{ url_for('dashbaord') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                                <img class="size-6" src="./images/dashboard-interface.png" alt="">
+                                <label class="text-[22px] text-white font-semibold">Dashboard</label>
+                            </a>
+                        </li>
+    
+                        <!-- tasks  -->
+                        <li class="">
+                            
+                            <a href="{{ url_for('task') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                                <img class="size-7" src="./images/task.png" alt="">
+                                <label class="text-[22px] text-white font-semibold">Task</label></a>
+                        </li>
+    
+                        <!-- todo  -->
+                        <li class="">
+                            
+                            <a href="{{ url_for('todo') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                                <img class="size-8" src="./images/todo.png" alt="">
+                                <label class="text-[22px] text-white font-semibold">Todo</label></a>
+                        </li>
+    
+                        <!-- feature  -->
+                        <li class="">
+                            <a href="{{ url_for('feature') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                                <img class="size-8" src="./images/feature.png" alt="">
+                                <label class="text-[22px] text-white font-semibold">Features</label></a>
+                        </li>
+    
+                        <!-- Issues  -->
+                        <li class="">
+                            
+                            <a href="{{ url_for('issue') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                                <img class="size-8" src="./images/add-task.png" alt="">
+                                <label class="text-[22px] text-white font-semibold">Issues</label></a>
+                        </li>
+    
+                        <!-- employee  -->
+                        <li class="">
+                            
+                            <a href="{{ url_for('employee') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                                <img class="size-8" src="./images/employee.png" alt="">
+                                <label class="text-[22px] text-white font-semibold">Employee</label></a>
+                        </li>
+                         <!-- ..admins -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('register_admin') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/employee.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Admins</label></a>
+                    </li>
+                        
+                    </ul>
+    
+                    <li class="">
+                            
+                        <a href="{{ url_for('profile') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                           
+                            <button class="mt-5 px-16 w-[100%] py-3 bg-white rounded hover:bg-gray-200  font-semibold text-md">Profile</button>
+                    </li>
+                </div>
+    
+                <!-- mobile screen  -->
+                <div class="btns relative mx-2 pt-10 pb-5 flex flex-col justify-between items-end h-full hidden max-sm:block">
+                    <ul class="mt-6 space-y-4 ">
+                        <li class="">
+                            <!-- dashboard -->
+                            <a href="{{ url_for('dashbaord') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                                <img class="size-6" src="./images/dashboard-interface.png" alt="">
+                                
+                            </a>
+                        </li>
+    
+                        <!-- tasks  -->
+                        <li class="">
+                            
+                            <a href="{{ url_for('task') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                                <img class="size-7" src="./images/task.png" alt="">
+                            </a>
+                        </li>
+    
+                        <!-- todo  -->
+                        <li class="">
+                            
+                            <a href="{{ url_for('todo') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                                <img class="size-8" src="./images/todo.png" alt="">
+                            </a>
+                        </li>
+    
+                        <!-- feature  -->
+                        <li class="">
+                            
+                            <a href="{{ url_for('feature') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                                <img class="size-8" src="./images/feature.png" alt="">
+                            </a>
+                        </li>
+                        <!-- issues  -->
+                        <li class="">
+                            
+                            <a href="{{ url_for('feature') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                                <img class="size-8" src="./images/add-task.png" alt="">
+                            </a>
+                        </li>
+    
+                        <!-- employee  -->
+                        <li class="">
+                            
+                            <a href="{{ url_for('employee') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                                <img class="size-8" src="./images/employee.png" alt="">
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    
+                    <div class="absolute bottom-5  block hover:bg-cyan-600 p-2 rounded flex items-center gap-3">
+                        <li class="">
+                            
+                            <a href="{{ url_for('profile') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                                <button class=" "><img class="size-7" src="./images/user.png" alt=""></button>
+                                
+                            </a>
+                        </li>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </section>
+                     
+
+
+    <div class="flex">
+       
+        <!-- profillllllllllllllllle -->
+        <div class="flex">
+       
+            <div class="flex  h-screen justify-center items-center min-h-screen w-3/4">
+                <div class="bg-white p-8 rounded-lg shadow-sm ml-4 w-full max-w-md">
+                    <h2 class="text-3xl font-bold mb-6 text-left">Profile</h2>
+                    <div id="profile-view">
+                        <div class="mb-4  w-[800px] flex justify-between">
+                            <p class="text-gray-700"><strong>Name:</strong>{{ admin_profile[0][0] }}</p>
+                        <form action="{{ url_for('logout') }}">
+                            <button class="
+                            bg-red-600 text-white w-[100px] h-[40px] rounded-md
+                            ">Logout</button>
+                        </form>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-700"><strong>Email:</strong>{{ admin_profile[0][1] }}</p>
+                        </div><div class="mb-4">
+                            <p class="text-gray-700"><strong>password:</strong> **************</p>
+                     
+                        </div>
+                        <div class="flex justify-center mt-6">
+                            <button id="changeProfileBtn" class="bg-cyan-500 text-white px-4 py-2 rounded-sm w-[280px] mt-8">Change profile</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            </div>
+        </div>
+
+        <!-- model -->
+        <div class="modal fixed w-full h-full top-0 left-0 flex items-center justify-center opacity-0 pointer-events-none">
+            <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+            <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+                <div class="modal-content py-4 text-left px-6">
+                    <!-- Title -->
+                    <div class="flex justify-between items-center pb-3">
+                        <p class="text-2xl font-bold">Edit Profile</p>
+                        <div class="modal-close cursor-pointer z-50">
+                            <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                <path d="M14.53 3.53a.75.75 0 0 0-1.06 0L9 7.94 4.53 3.53a.75.75 0 0 0-1.06 1.06L7.94 9l-4.47 4.47a.75.75 0 1 0 1.06 1.06L9 10.06l4.47 4.47a.75.75 0 1 0 1.06-1.06L10.06 9l4.47-4.47a.75.75 0 0 0 0-1.06z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Body -->
+                    <form class="text-center" id="edit-profile-form" action="{{ url_for('profile') }}" method="post">
+                        <div class="mb-4 flex space-x-2 ">
+                            <input type="text" id="name" name="name" class=" px-3 py-2 border rounded-sm" placeholder="Enter your name">
+                            <input type="email" id="email" name="email" class=" px-3 py-2 border rounded-sm" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-4 flex space-x-2">
+                            <input type="password" id="password" name="password" class=" px-3 py-2 border rounded-sm" placeholder="Enter your password">
+                           
+                        </div>
+                        
+                        <div class="flex justify-center">
+                            <button type="submit" class="changeProfileBtn  bg-cyan-500 text-white px-4 py-2 rounded-sm">Edit profile</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+      
+
+        </div>
+
+
+
+
+    <script>
+        var openModal = document.querySelectorAll('.modal-open');
+        for (var i = 0; i < openModal.length; i++) {
+            openModal[i].addEventListener('click', function(event){
+                event.preventDefault();
+                toggleModal();
+            });
+        }
+        
+        const overlay = document.querySelector('.modal-overlay');
+        overlay.addEventListener('click', toggleModal);
+        
+        var closeModal = document.querySelectorAll('.modal-close');
+        for (var i = 0; i < closeModal.length; i++) {
+            closeModal[i].addEventListener('click', toggleModal);
+        }
+        
+        document.onkeydown = function(evt) {
+            evt = evt || window.event;
+            var isEscape = false;
+            if ("key" in evt) {
+                isEscape = (evt.key === "Escape" || evt.key === "Esc");
+            } else {
+                isEscape = (evt.keyCode === 27);
+            }
+            if (isEscape && document.body.classList.contains('modal-active')) {
+                toggleModal();
+            }
+        };
+        
+        function toggleModal () {
+            const body = document.querySelector('body');
+            const modal = document.querySelector('.modal');
+            modal.classList.toggle('opacity-0');
+            modal.classList.toggle('pointer-events-none');
+            body.classList.toggle('modal-active');
+        }
+        
+        document.getElementById('changeProfileBtn').addEventListener('click', function() {
+            toggleModal();
+        });
+
+     var menuBtn = document.getElementById('menu-btn');
+    var sidebar = document.getElementById('sidebar');
+    menuBtn.addEventListener('click', function() {
+        sidebar.classList.toggle('hidden');
+    });
+    </script>
+</body>
+</html>

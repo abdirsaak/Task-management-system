@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tasks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body >
+    <div class="flex flex-row gap-5 max-sm:gap-1">
+    <!-- left side  -->
+    <section class=" " >
+        <!-- sidebar section -->
+        <div class="sidebar bg-cyan-500 w-64 h-full max-sm:w-14 ">
+            <!-- desktop screen  -->
+            <div class="btns mx-6 pt-10 pb-5 flex flex-col justify-between h-full max-sm:hidden ">
+                <ul class="mt-6 space-y-4 ">
+
+                    <!-- dashboard  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('dashbaord') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-6" src="./images/dashboard-interface.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Dashboard</label>
+                        </a>
+                    </li>
+
+                    <!-- tasks  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('task') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-7" src="./images/task.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Task</label></a>
+                    </li>
+
+                    <!-- todo  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('todo') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/todo.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Todo</label></a>
+                    </li>
+
+                    <!-- feature  -->
+                    <li class="">
+                        <a href="{{ url_for('feature') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/feature.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Features</label></a>
+                    </li>
+
+                    <!-- Issues  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('issue') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/add-task.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Issues</label></a>
+                    </li>
+
+                    <!-- employee  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('employee') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/employee.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Employee</label></a>
+                    </li>
+                     <!-- ..admins -->
+                     <li class="">
+                        
+                        <a href="{{ url_for('register_admin') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/employee.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Admins</label></a>
+                    </li>
+                    
+                </ul>
+
+                <li class="">
+                        
+                    <a href="{{ url_for('profile') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                       
+                        <button class="mt-5 px-16 w-[100%] py-3 bg-white rounded hover:bg-gray-200  font-semibold text-md">Profile</button>
+                </li>
+            </div>
+
+            <!-- mobile screen  -->
+            <div class="btns relative mx-2 pt-10 pb-5 flex flex-col justify-between items-end h-full hidden max-sm:block">
+                <ul class="mt-6 space-y-4 ">
+                    <li class="">
+                        <!-- dashboard -->
+                        <a href="{{ url_for('dashbaord') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-6" src="./images/dashboard-interface.png" alt="">
+                            
+                        </a>
+                    </li>
+
+                    <!-- tasks  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('task') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-7" src="./images/task.png" alt="">
+                        </a>
+                    </li>
+
+                    <!-- todo  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('todo') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/todo.png" alt="">
+                        </a>
+                    </li>
+
+                    <!-- feature  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('feature') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/feature.png" alt="">
+                        </a>
+                    </li>
+                    <!-- issues  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('feature') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/add-task.png" alt="">
+                        </a>
+                    </li>
+
+                    <!-- employee  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('employee') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/employee.png" alt="">
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+                <div class="absolute bottom-5  block hover:bg-cyan-600 p-2 rounded flex items-center gap-3">
+                    <li class="">
+                        
+                        <a href="{{ url_for('profile') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <button class=" "><img class="size-7" src="./images/user.png" alt=""></button>
+                            
+                        </a>
+                    </li>
+                </div>
+                
+            </div>
+        </div>
+        
+    </section>
+                 
+
+    <!-- right side  -->
+
+    <section class="my-5 w-full">
+        <h2 class="font-bold text-3xl ">Admins</h2>
+        <div class="flex mx-10 my-5 ">
+            <button onclick="TaskPopUp()" class="px-16 justify-end   py-3 bg-cyan-500 rounded hover:bg-cyan-400 text-white font-semibold text-xl ml-auto">add admin</button>
+        </div>
+        <table class="border-collapse  w-[95%] mx-auto leading-8 text-center  max-sm:text-[10px] max-sm:table-auto max-sm:w-[100%] ">
+            <tr class="border-b-2 border-gray-300 leading-4">
+                <th class="">Name</th>
+                <th class="">Email</th>
+                <th class="">Passowrd</th>
+                <th class="">Actions</th>
+
+            </tr>
+            {%  for admin in admins %}
+            <tr>
+                <td>{{ admin[1] }}</td>
+                <td>{{ admin[2] }}</td>
+                
+                <td>**********</td>
+                <td class="" >
+                    <button
+                      onclick="updatePopUp(event)" 
+                      data-admin_id="{{ admin[0] }}"
+                      data-admin_name="{{ admin[1] }}"
+                      data-admin_email="{{ admin[2] }}"
+                      data-admin_pass="{{ admin[3] }}"
+                      class="text-white bg-cyan-500 p-2 rounded text-[10px]  hover:bg-blue-400">Update</button>
+
+                      <form action="{{ url_for('register_admin') }}" method="post">
+                        <input type="hidden" name="delete_id" value="{{ admin[0]  }}" id="">
+                        <button type="submit"><i class="fa-solid fa-trash text-white bg-cyan-500 p-2 rounded hover:text-red-500 hover:bg-blue-400 text-[13px]"></i></button>
+                      </form>
+                
+                </td>
+            </tr>
+
+            {% endfor %}
+           
+          
+            
+        </table>
+    </section>
+
+    <!-- create admins -->
+    <div id="popup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="relative p-6 bg-white rounded-md shadow-lg max-w-lg w-full">
+            <!-- Close icon -->
+            <button onclick="TaskPopUp()" class="absolute top-2 right-2 bg-gray-400 p-2 rounded-full hover:bg-gray-800">
+                <img class="size-3" src="./images/close.png" alt="">
+            </button>
+            
+            <!-- Form  -->
+            <form action="{{ url_for('register_admin') }}" class="space-y-4 mt-5" method="post">
+                <div class="grid grid-cols-2 gap-4">
+                    
+                    <div>
+                        <input 
+                             name="admin_name"
+                            type="text" 
+                            placeholder="admin Name" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                    
+                    <!-- email -->
+                    <div>
+                        <input 
+                            name="admin_email"
+                            type="email" 
+                            placeholder="admin email" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                   
+                </div>
+                
+            
+               <!-- password -->
+               <div>
+                <input 
+                    name="admin_pass"
+                    type="password" 
+                    placeholder="admin passowrd" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                />
+            </div>
+                
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button 
+                        name="create_admin"
+                        type="submit" 
+                        class="w-full px-6 py-3 bg-cyan-500 text-white rounded-md hover:bg-cyan-600 font-semibold"
+                    >
+                        Create Admin
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- update admins -->
+    <div id="update_popup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="relative p-6 bg-white rounded-md shadow-lg max-w-lg w-full">
+            <!-- Close icon -->
+            <button onclick="updatePopUp()" class="absolute top-2 right-2 bg-gray-400 p-2 rounded-full hover:bg-gray-800">
+                <img class="size-3" src="./images/close.png" alt="">
+            </button>
+            
+            <!-- Form  -->
+            <form action="{{ url_for('register_admin') }}" class="space-y-4 mt-5" method="post">
+                <div class="grid grid-cols-1 gap-4">
+                    
+                    <div>
+                        <input 
+                             name="update_id"
+                            type="hidden" 
+                             id="admin_id"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                    
+                    <div>
+                        <input 
+                             name="admin_name"
+                            type="text" 
+                            id="admin_name"
+                            placeholder="admin Name" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                    
+                    <!-- email -->
+                    <div>
+                        <input 
+                            name="admin_email"
+                            type="email" 
+                            id="admin_email"
+                            placeholder="admin email" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                   
+                </div>
+                
+            
+               <!-- password -->
+               <div>
+                <input 
+                    name="admin_pass"
+                    type="password" 
+                    id="admin_password"
+                    placeholder="admin passowrd" 
+                
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                />
+            </div>
+                
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button 
+                        name=""
+                        type="submit" 
+                        class="w-full px-6 py-3 bg-cyan-500 text-white rounded-md hover:bg-cyan-600 font-semibold"
+                    >
+                        Update Admin
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript to toggle the pop-up -->
+    <script>
+        function TaskPopUp() {
+            const popup = document.getElementById('popup');
+            popup.classList.toggle('hidden');
+        }
+        function updatePopUp(event) {
+            const popup = document.getElementById('update_popup');
+
+            popup.classList.toggle('hidden');
+
+      if(event){
+                
+        const button = event.currentTarget;
+        const adminId = button.getAttribute('data-admin_id');
+        const adminName = button.getAttribute('data-admin_name');
+        const adminEmail = button.getAttribute('data-admin_email');
+        const adminPass = '********'
+
+      
+
+        // Set the values in the popup input fields
+        document.getElementById('admin_id').value = adminId;
+        document.getElementById('admin_name').value = adminName;
+        document.getElementById('admin_email').value = adminEmail;
+        document.getElementById('admin_password').value = adminPass;
+      }
+
+       
+        }
+    </script>
+    </div>
+</body>
+</html>

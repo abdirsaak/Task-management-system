@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body >
+    <div class="flex flex-row gap-5 max-sm:gap-1">
+    <!-- left side  -->
+    <section class=" " >
+        <!-- sidebar section -->
+        <div class="sidebar bg-cyan-500 w-64 h-full max-sm:w-14 ">
+            <!-- desktop screen  -->
+            <div class="btns mx-6 pt-10 pb-5 flex flex-col justify-between h-full max-sm:hidden ">
+                <ul class="mt-6 space-y-4 ">
+
+                    <!-- dashboard  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('dashbaord') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-6" src="./images/dashboard-interface.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Dashboard</label>
+                        </a>
+                    </li>
+
+                    <!-- tasks  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('task') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-7" src="./images/task.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Task</label></a>
+                    </li>
+
+                    <!-- todo  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('todo') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/todo.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Todo</label></a>
+                    </li>
+
+                    <!-- feature  -->
+                    <li class="">
+                        <a href="{{ url_for('feature') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/feature.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Features</label></a>
+                    </li>
+
+                    <!-- Issues  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('issue') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/add-task.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Issues</label></a>
+                    </li>
+
+                    <!-- employee  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('employee') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/employee.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Employee</label></a>
+                    </li>
+                    <!-- ..admins -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('register_admin') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/employee.png" alt="">
+                            <label class="text-[22px] text-white font-semibold">Admins</label></a>
+                    </li>
+                    
+                </ul>
+
+                <li class="">
+                        
+                    <a href="{{ url_for('profile') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                       
+                        <button class="mt-5 px-16 w-[100%] py-3 bg-white rounded hover:bg-gray-200  font-semibold text-md">Profile</button>
+                </li>
+            </div>
+
+            <!-- mobile screen  -->
+            <div class="btns relative mx-2 pt-10 pb-5 flex flex-col justify-between items-end h-full hidden max-sm:block">
+                <ul class="mt-6 space-y-4 ">
+                    <li class="">
+                        <!-- dashboard -->
+                        <a href="{{ url_for('dashbaord') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-6" src="./images/dashboard-interface.png" alt="">
+                            
+                        </a>
+                    </li>
+
+                    <!-- tasks  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('task') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-7" src="./images/task.png" alt="">
+                        </a>
+                    </li>
+
+                    <!-- todo  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('todo') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/todo.png" alt="">
+                        </a>
+                    </li>
+
+                    <!-- feature  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('feature') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/feature.png" alt="">
+                        </a>
+                    </li>
+                    <!-- issues  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('feature') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/add-task.png" alt="">
+                        </a>
+                    </li>
+
+                    <!-- employee  -->
+                    <li class="">
+                        
+                        <a href="{{ url_for('employee') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <img class="size-8" src="./images/employee.png" alt="">
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+                <div class="absolute bottom-5  block hover:bg-cyan-600 p-2 rounded flex items-center gap-3">
+                    <li class="">
+                        
+                        <a href="{{ url_for('profile') }}" class="block hover:bg-cyan-600 p-2 rounded flex items-center gap-3 ">
+                            <button class=" "><img class="size-7" src="./images/user.png" alt=""></button>
+                            
+                        </a>
+                    </li>
+                </div>
+                
+            </div>
+        </div>
+        
+    </section>
+                 
+  <!-- .............flash -->
+         <!-- {% with messages = get_flashed_messages() %} {% if messages %}
+         <div id="flash-message" class="flex justify-center items-center w-[200px] h-[50px] bg-red-500 text-white rounded-md">
+ 
+           <ul>
+             {% for message in messages %}
+             <li>{{ message }}</li>
+             {% endfor %}
+           </ul>
+         </div>
+         {% endif %} {% endwith %} -->
+    <!-- right side  -->
+
+    <section class="my-5 w-full">
+        <h2 class="font-bold text-3xl ">Emplooyee</h2>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="flex flex-col items-center mt-4"> <!-- Container for centered messages -->
+            {% for category, message in messages %}
+              <div id="task_creation_settimeout" class="bg-cyan-500 text-white text-center px-10 width-[500px] h-[60px] flex items-center justify-center rounded-md mb-2 {{ category }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+        <div class="flex mx-10 my-5 ">
+            <button onclick="TaskPopUp()" class="px-16 justify-end   py-3 bg-cyan-500 rounded hover:bg-cyan-400 text-white font-semibold text-xl ml-auto">Add Employee</button>
+        </div>
+        <table class="min-w-full text-sm text-left rtl:text-right   ">
+            <tr class="">
+               <th class="text-left  text-[20px] p-[10px]">Id</th>
+               <th class="text-left  text-[20px] p-[10px]">Name</th>
+               <th class="text-left  text-[20px] p-[10px]">Email</th>
+               <th class="text-left  text-[20px] p-[10px]">Number</th>
+               <th class="text-left  text-[20px] p-[10px]">Address</th>
+               <th class="text-left  text-[20px] p-[10px] ">images</th>
+               <th class="text-left  text-[20px] p-[10px] ">Action</th>
+           </tr>
+         
+   
+           {% for emp in get_emp %}
+           <tr>
+                <td>{{ emp[0] }}</td>
+                <td>{{ emp[1] }}</td>
+                <td>{{ emp[2] }}</td>
+                <td>{{ emp[4] }}</td>
+                <td>{{ emp[5] }}</td>
+                
+                <td>
+                  
+
+                    <img class = 'w-[60px] h-[60px]' src="{{  url_for('static', filename = ('./emp_images/' + emp[6])) }}" alt="">
+                   
+                </td>
+
+                <td>
+                    <button
+                    onclick="update_popup(event)"
+                    data-emp_id="{{ emp[0] }}"
+                    data-emp_name="{{ emp[1] }}"
+                    data-emp_email="{{ emp[2] }}"
+                    data-emp_address="{{ emp[5] }}"
+                    data-emp_num="{{ emp[4] }}"
+                    class="bg-green-500 text-white rounded-md w-[80px] h-[40px]"
+                >
+                    Update
+                </button>
+                   <form action="{{ url_for('employee') }}" method="post">
+                    <input type="text" name="emp_id" value="{{ emp[0]  }}" id="" hidden>
+                    <button name="delete_btn" type="submit" class="bg-red-500 text-white rounded-md w-[80px] h-[40px]">Delete</button>
+                   </form>
+                </td>
+
+           </tr>
+
+           {% endfor %}
+       </table>
+    </section>
+
+    <!-- register employee pop up -->
+    <div id="popup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="relative p-6 bg-white rounded-md shadow-lg max-w-lg w-full">
+            <!-- Close icon -->
+            <button onclick="TaskPopUp()" class="absolute top-2 right-2 bg-gray-400 p-2 rounded-full hover:bg-gray-800">
+                <img class="size-3" src="./images/close.png" alt="">
+            </button>
+            
+            <!-- Form  -->
+            <form action="{{ url_for('employee') }}" method="post" class="space-y-4 mt-5" enctype="multipart/form-data">
+                <div class="grid grid-cols-2 gap-4">
+                    
+                    <div>
+                        <input 
+                            type="text" 
+                            name="emp_name"
+                            placeholder="employee Name" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                    <div>
+                        <input 
+                        name="emp_email"
+                            type="text" 
+                            placeholder="employee email" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                    <div>
+                        <input 
+                        name="emp_pass"
+                            type="text" 
+                            placeholder="employee passowrd" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                
+                   
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    
+                    <div>
+                        <input 
+                            type="text" 
+                            name="emp_num"
+                            placeholder="employee Number" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                    <div>
+                        <input 
+                            type="text" 
+                            name="emp_address"
+                            placeholder="employee address" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                    <div>
+                        <input 
+                            type="file" 
+                            name="emp_img"
+                            placeholder="" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                
+                   
+                </div>
+                
+               
+                
+                
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button 
+                    name="create_emp"
+                        type="submit" 
+                        class="w-full px-6 py-3 bg-cyan-500 text-white rounded-md hover:bg-cyan-600 font-semibold"
+                    >
+                        Register Employee
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- update employee pop up -->
+    <div id="_update_popup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="relative p-6 bg-white rounded-md shadow-lg max-w-lg w-full">
+            <!-- Close icon -->
+            <button onclick="update_popup()" class="absolute top-2 right-2 bg-gray-400 p-2 rounded-full hover:bg-gray-800">
+                <img class="size-3" src="./images/close.png" alt="">
+            </button>
+            
+            <!-- Form  -->
+            <form action="{{ url_for('employee') }}" method="post" class="space-y-4 mt-5" enctype="multipart/form-data">
+                <div class="grid grid-cols-2 gap-4">
+                    <input type="text" name="emp_id" id="emp_id" hidden />
+
+                    <div>
+                        <input 
+                            type="text" 
+                            name="emp_name"
+                            id="emp_name"
+                            placeholder="employee Name" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                    <div>
+                        <input 
+                        name="emp_email"
+                            type="text" 
+                            id="emp_email"
+                            placeholder="employee email" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                    <div>
+                        <input 
+                        name="emp_pass"
+                            type="text" 
+                            id="emp_pass"
+                            placeholder="employee passowrd" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                
+                   
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    
+                    <div>
+                        <input 
+                            type="text" 
+                            name="emp_num"
+                            id="emp_num"
+                            placeholder="employee Number" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                    <div>
+                        <input 
+                            type="text" 
+                            name="emp_address"
+                            id="emp_address"
+                            placeholder="employee address" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                    <div>
+                        <input 
+                            type="file" 
+                            name="emp_img"
+                            placeholder="" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                
+                   
+                </div>
+                
+               
+                
+                
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button 
+                    name="update_emp"
+                        type="submit" 
+                        class="w-full px-6 py-3 bg-cyan-500 text-white rounded-md hover:bg-cyan-600 font-semibold"
+                    >
+                        update Employee
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript to toggle the pop-up -->
+    <script>
+        function TaskPopUp() {
+            const popup = document.getElementById('popup');
+            popup.classList.toggle('hidden');
+        }
+      
+
+        function update_popup(event) {
+    const popup = document.getElementById('_update_popup');
+    popup.classList.toggle('hidden');
+
+    if (event) {
+        const button = event.currentTarget;
+        const emp_id = button.getAttribute('data-emp_id');
+        const empName = button.getAttribute('data-emp_name');
+        const empEmail = button.getAttribute('data-emp_email');
+        const emp_address = button.getAttribute('data-emp_address');
+        const emp_num = button.getAttribute('data-emp_num');
+        const empPass = '********';
+
+        // Set the values in the popup input fields
+        document.getElementById('emp_id').value = emp_id;
+        document.getElementById('emp_name').value = empName;
+        document.getElementById('emp_email').value = empEmail;
+        document.getElementById('emp_pass').value = empPass;
+        document.getElementById('emp_address').value = emp_address;
+        document.getElementById('emp_num').value = emp_num;
+    }
+}
+
+
+
+
+        setTimeout(() => {
+            document.querySelector('#flash-message').style.display = 'none'
+        }, 2000);
+
+        
+        let task_create = document.querySelector('#task_creation_settimeout')
+        setTimeout(() => {
+            task_create.style.display = 'none'
+        }, 2000);
+    </script>
+    </div>
+</body>
+</html>

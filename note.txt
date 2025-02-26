@@ -1,0 +1,29 @@
+
+
+
+
+
+
+
+26-12-2024
+
+        1.Admin profile
+        2.solve display todo iyo task without stoping the server and start again.  (1ka)
+        3.employee email (passwrd iyo email)
+        4.cancel todo overview
+        5.assing task to employee (did not get the latest employee list) (2ka)
+
+
+27-12-2024
+        1. employee profile
+        2.system (in system uu la haado flash(qyern walba))
+
+
+
+
+
+
+
+
+18 system, 
+
